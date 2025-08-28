@@ -1,53 +1,60 @@
-User Role Application
+# 👥 User Role App
 
-This is a full-stack application built with Laravel 10 and React 18 with TypeScript, allowing the creation of users with multiple roles and listing them by role.
+A full-stack web application using **Laravel 10** and **React 18 with TypeScript** that allows the creation of users with **multiple roles** and displays users filtered by role.
 
-🧰 Technologies Used
+---
 
-Backend: Laravel 10/11 (with Sail optional)
+## 🚀 Features
 
-Frontend: React 17/18 with TypeScript
+- Create users with full name, email, and multiple roles
+- Roles: `Author`, `Editor`, `Subscriber`, `Administrator`
+- API validation for required fields and unique email
+- Display users grouped or filtered by role
+- Fully typed React frontend using hooks and Axios
 
-API Communication: Axios
+---
 
-Database: MySQL or SQLite
+## 🧰 Tech Stack
 
-Extras: Laravel Eloquent Relationships (Many-to-Many), CORS enabled
+| Layer     | Tech                      |
+|-----------|---------------------------|
+| Backend   | Laravel 10 (PHP 8.1+)     |
+| Frontend  | React 18 with TypeScript  |
+| API       | RESTful JSON API (Axios)  |
+| Database  | MySQL / SQLite            |
+| Dev Env   | Laravel Sail (optional)   |
 
-📦 Backend Installation (Laravel)
-Prerequisites:
+---
 
-PHP 8.1+
+## ⚙️ Backend Setup (Laravel 10)
 
-Composer
+### ✅ Requirements
+- PHP 8.1+
+- Composer
+- MySQL or SQLite
+- Docker (optional for Laravel Sail)
 
-MySQL or SQLite
+### 🛠 Installation
 
-Node.js & npm (optional for Sail)
-
-Docker (optional for Laravel Sail)
-
-Steps:
-# Clone the project
-git clone <repo-url>
+```bash
+# Clone repository
+git clone <your-repo-url>
 cd user-role-app
 
 # Install dependencies
 composer install
 
-# Copy environment file
+# Copy and configure environment
 cp .env.example .env
-
-# Generate app key
 php artisan key:generate
 
-# Configure DB in `.env` file
-DB_DATABASE=your_db
-DB_USERNAME=your_user
-DB_PASSWORD=your_pass
+# Configure DB in .env
+DB_DATABASE=your_db_name
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
 
 # Run migrations and seed roles
 php artisan migrate --seed
 
-# Start the server
+# Start Laravel server
 php artisan serve
